@@ -1,0 +1,160 @@
+1. admin_table
+Schema: admin_table(admin_id, username, password)
+admin_id INT
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+username VARCHAR(50)
+NOT NULL
+password VARCHAR(50)
+NOT NULL
+
+
+2. product
+Schema: product(product_id, product_name, product_cost, brand_name(FK))
+product_id INT
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+product_name VARCHAR(50)
+NOT NULL
+product_cost VARCHAR(50)
+NOT NULL
+CHECK product_cost>0
+brand_name VARCHAR(50)
+NOT NULL
+FOREIGN KEY REFERENCES Brand
+
+
+3. order_table
+Schema: order_table(Order_id, Delivery_Address, Shipper_id, DateTime, Unique_id,
+Billing_id, couponID)
+Order_id INT
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+Delivery_Address VARCHAR(50)
+NOT NULL
+Shipper_id INT
+NOT NULL
+FOREIGN KEY REFERENCES SHIPPER
+DateTime DATE
+NOT NULL
+Unique_id INT
+NOT NULL
+FOREIGN KEY REFERENCES USER
+Billing_id INT
+NOT NULL
+FOREIGN KEY REFERENCES
+BILLING_DETAILS
+couponID Varchar(40)
+Default NULL
+Foreign Key references Coupon_Data
+
+
+
+4. shipper
+Schema: shipper(Shipper_id, Shipper_name, Delivery_speed)
+Shipper_id INT
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+Shipper_name VARCHAR(50)
+NOT NULL
+Delivery_speed INT, NOT NULL
+
+
+
+5. user
+Schema: user(id, Address, Name, EmailID, Password, PhoneNumber)
+id INT
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+Address VARCHAR(50)
+NOT NULL
+Name VARCHAR(50)
+NOT NULL
+EmailID VARCHAR(50)
+NOT NULL
+UNIQUE
+Password VARCHAR(50)
+NOT NULL
+PhoneNumber VARCHAR(50)
+NOT NULL
+
+
+
+
+6. coupon_data
+Schema: coupon_data(Coupon_id, Discount, Expiry_Date, Unique_id,isUsed)
+Coupon_id VARCHAR(40)
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+Discount INT
+NOT NULL
+CHECK DISCOUNT>0
+Expiry_Date DATE
+NOT NULL
+Unique_id INT
+NOT NULL
+FOREIGN KEY REFERENCES USER
+isUsed INT
+Default value 0
+
+
+
+7. billing_details
+Schema: billing_details(billing_id, payment_mode, billing_address)
+billing_id INT
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+payment_mode VARCHAR(30)
+NOT NULL
+billing_address VARCHAR(50)
+NOT NULL
+
+
+
+
+8. brand
+Schema: brand(brand_name)
+brand_name VARCHAR(50)
+PRIMARY KEY
+NOT NULL
+
+
+
+9. inventory
+Schema: inventory(product_id, quantity)
+product_id INT
+PRIMARY KEY
+NOT NULL
+FOREIGN KEY REFERENCES PRODUCT
+quantity INT
+NOT NULL
+CHECK Quantity > 0
+
+
+
+10.cart_data
+Schema: cart_data(Unique_ID)
+Unique_id INT
+PRIMARY KEY
+NOT NULL
+FOREIGN KEY REFERENCES User
+CHECK Quantity > 0
+
+
+
+11.category
+Schema: category(category_id, category_name, category_info)
+category_id INT
+PRIMARY KEY
+NOT NULL
+AUTO_INCREMENT
+category_name VARCHAR(50)
+NOT NULL
+category_info VARCHAR(50)

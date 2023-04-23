@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="details" style="font-family:'Poppins';font-weight:300;font-style:normal;">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    flex:1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
+p{
+    color: #555
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-2 img{
+    max-width: 100%;
+    padding:50px 0;
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.btn{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px ;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #563434;
+}
+.header{
+    background: radial-gradient(#fff,#ffd6d6);
+}
+.header .row{
+    margin-right: 70px;
+}
+.categories{
+    margin: 70px 0;
+}
+.col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-4 img{
+    width: 100%;
+}
+.title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color:#555;
+}
+.title::after{
+    content: '';
+    background: #ff523b;
+    width: 0px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.01s;
+}
+.title:hover::after{
+    width: 80px;
+}
+h4{
+    color: #555;
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 14px;
+}
+.rating .fa{
+    color: #ff523b;
+}
+.col-4:hover{
+    transform: translateY(-5px);
+}
+/* ---offer--- */
+
+.offer{
+    background: radial-gradient(#fff,#ffd6d6);
+    margin-top: 80px;
+    padding:30px 0
+}
+.col-2 .offer-img{
+    padding: 50px;
+}
+small{
+    color: #555;
+}
+/* ----testimonial---- */
+.testimonial{
+    padding-top: 100px;
+
+}
+.testimonial .col-3{
+    text-align: center;
+    padding: 40px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition:transform 0.5s;
+}
+.testimonial .col-3 img{
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.testimonial .col-3:hover{
+    transform: translateY(-10px);
+}
+.fa.fa-quote-left{
+    font-size: 34px;
+    color: #ff523b;
+}
+.col-3:p{
+    font-size:12px ;
+    margin: 12px 0;
+    color: #777;
+}
+.testimonial .col-3 h3{
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+}
+/* footer */
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer p{
+    color:#8a8a8a;
+}
+.footer h3{
+    color:#fff;
+    margin-bottom:20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+min-width: 250px;
+margin-bottom: 20px;
+}
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+.footer-col-3,.footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+.app-logo{
+    margin-top: 20px;
+}
+.app-logo img{
+    width: 140px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copyright{
+    text-align: center;
+}
+.menu-icon{
+    width:28px;
+    margin-left: 20px;
+    display: none;
+}
+@media only screen and (max-width: 800px){
+
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left:0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color:#fff;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* ----All products---- */
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+select{
+    border: 1px solid #ff523b;
+    padding:5px;
+}
+select:focus{
+    outline: none;
+}
+
+
+
+ /* --- media query for less than 600 screen size--- */
+ @media only screen and (max-width: 600px){
+    .row{
+        text-align: center;
+    }
+    .col-2, .col-3, .col-4{
+        flex-basis: 100%;
+    }
+    .single-product .row{
+        text-align: left;
+    }
+    .single-product .col-2{
+        padding: 20px 0;
+    }
+    .single-product h1{
+        font-size: 26px;
+        line-height: 32px;
+    }
+ }
+.page-btn{
+    margin:0 auto 80px;
+}
+.page-btn span{
+    display:  inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.page-btn span:hover{
+    background: #ff523b;
+    color: white;
+}
+
+
+/* ---single product details--- */
+
+.single-product{
+    margin-top: 80px;
+
+}
+.single-product .col-2 img{
+    padding:0;
+
+}
+.single-product .col-2{
+    padding: 20px;
+}
+.single-product h4{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.single-product select{
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #ff523b;
+}
+.single-product .fa{
+    color: #ff523b;
+    margin-left: 10px;
+}
+
+.small-img-row{
+    display: flex;
+    justify-content: space-between;
+
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="header">
+    <div class="container">
+        <div class="navbar">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCNhleVELWNp2Mlxq05D20XWopugqfbP2IbA&usqp=CAU" width="125px">
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Account</a></li>
+            </ul>
+        </nav>
+        <img src="https://w1.pngwing.com/pngs/720/451/png-transparent-shopping-cart-icon-shopping-bag-tote-bag-icon-design-online-shopping-black-and-white-area-rectangle.png" width="30px" height="30px">
+        <img src="https://assets.stickpng.com/images/588a6507d06f6719692a2d15.png" width="26px" class="menu-icon" onclick="menutoggle()">
+    </div>
+    </div> 
+    </div>
+
+    <!-- ------- single product details ------- -->
+
+        <div class="small-container single-product">
+            <div class="row">
+                <div class="col-2">
+                    <img src="https://m.media-amazon.com/images/I/31lIxQ6KsdL.jpg" width="100%" id="productImg">
+                
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <img src="https://i.pinimg.com/736x/32/c0/3a/32c03a83182da965390d11c2e422cf5b.jpg" width="80%" class="smallImg">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="https://i.pinimg.com/736x/a3/cd/c1/a3cdc15407ae7c2dd45ede678e644429.jpg" width="80%" height="70%" class="smallImg">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="https://i.pinimg.com/236x/80/15/a6/8015a6330b3a397405a59245695d1310--orange-pants-red-pants.jpg" width="80%" height="70%" class="smallImg">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="https://outfittrends.b-cdn.net/wp-content/uploads/2017/06/burnt-orange-pants.jpg" width="1000%" height="70%" class="smallImg">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <p>Home / Pants</p>
+                    <!-- <h1>Oshano Polycotton Formal Wear</h1> -->
+                    <h1>{{ page_heading }}</h1>
+                    <h4>$50.00</h4>
+                    <select>
+                        <option>Select Size</option>
+                        <option>XXL</option>
+                        <option>XL</option>
+                        <option>Large</option>
+                        <option>Medium</option>
+                        <option>Small</option>
+                    </select>
+                    <input type="number" value="1">
+                    <a href="" class="btn">Add to cart</a>
+                    <br>
+                    <h3>Product Details <i class="fa fa-indent"></i></h3>
+                    <p>Give your summer wardrobe a style upgrade with the HRX 
+                    Men's Active T-shirt.Team it with a pair of shorts for 
+                    your morning workout or a Denims
+                    for an evening out with the guys.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+<!-- -----title----- -->
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>Related Products</h2>
+                <p>View more</p>
+            </div>
+        </div>   
+
+<!-- ----products---- -->
+        <div class="small-container">
+            
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/17638304/2022/4/8/65343a45-2513-4981-a43a-b8f04ebb00b61649407271212-Indian-Women-Fuchsia-Pink--Silver-Zari-Silk-Blend-Saree-9821-1.jpg">
+                <h4>Saree</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$75.00</p>
+            </div>
+            <div class="col-4">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/MA2021/Store/PC/SBC/Denim-jackets.jpg">
+                <h4>Denim-jackets(Jeans)</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$88.00</p>
+            </div>
+            <div class="col-4">
+                <img src="https://m.media-amazon.com/images/I/81iLEjaMUWL._AC_UL320_.jpg">
+                <h4>Classic shirts for couple</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$69.00</p>
+            </div>
+            <div class="col-4">
+                <img src="https://m.media-amazon.com/images/I/712WC76OZEL._UY550_.jpg">
+                <h4>ELEGANT FOX Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$59.00</p>
+        </div>
+        <div class="col-4">
+            <img src="https://i.pinimg.com/originals/3b/ff/a4/3bffa433c814fe3f3f12187072c17be9.jpg">
+            <h4>Armani Suit</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$100.00</p>
+    </div>
+    <div class="col-4">
+        <img src="https://m.media-amazon.com/images/I/71DoV4hvbgL._UY500_.jpg">
+        <h4>Toro Canvas Denim Shoe</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+        </div>
+        <p>$35.00</p>
+</div>
+<div class="col-4">
+    <img src="https://m.media-amazon.com/images/I/71a3J9Mv57L._UY500_.jpg">
+    <h4></h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+    </div>
+    <p>$31.00</p>
+</div>
+</div>
+
+<!-- ---footer--- -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download our app</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="https://w7.pngwing.com/pngs/366/351/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png" >
+                </div>
+                <div class="app-logo">
+                    <img src="https://w7.pngwing.com/pngs/270/658/png-transparent-app-store-apple-google-play-apple-text-logo-mobile-phones.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="">
+                <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to the many.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+               <ul>
+                <li>Coupons</li>
+                <li>Blog Post</li>
+                <li>Return Policy</li>
+                <li>Join Affiliate</li>
+               </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+               <ul>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Instagram</li>
+                <li>Youtube</li>
+               </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            Copyright 2020 - Easy Tutorials
+        </p>
+    </div>
+</div>
+<script>
+    // ---Toggle-Menu---
+
+    var MenuItems=document.getElementById("MenuItems");
+    MenuItems.style.maxHeight="0px";
+    function menutoggle(){
+        if(MenuItems.style.maxHeight=="0px")
+        {
+            MenuItems.style.maxHeight="200px";
+        }
+        else
+        {
+            MenuItems.style.maxHeight="0px";
+        }
+    }
+</script>
+
+<!-- --------js for product gallery --------- -->
+
+    <script>
+        var ProductImg = document.getElementById("productImg");
+        var SmallImg = document.getElementsByClassName("smallImg");
+
+        SmallImg[0].onclick = function(){
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function(){
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function(){
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function(){
+            ProductImg.src = SmallImg[3].src;
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+-- 1. items_contained (in Cart)
+-- Schema: items_contained(Unique_ID, Product_ID, Quantity)
+-- Unique_id INT
+-- NOT NULL
+-- FOREIGN KEY REFERENCES Cart_Data
+-- Product_ID INT
+-- NOT NULL
+-- Quantity INT
+-- NOT NULL
+-- CHECK Quantity>0
+-- PRIMARY KEY (Unique_id, Product_ID, Quantity)
+-- 2. items_purchased (in Order)
+-- Schema: items_purchased(Order_id, Product_ID, Quantity, Cost)
+-- Order_id INT
+-- NOT NULL
+-- FOREIGN KEY REFERENCES Order
+-- Product_ID INT
+-- NOT NULL
+-- Quantity INT
+-- NOT NULL
+-- Check Quantity > 0
+-- Cost INT
+-- DEFAULT=0
+-- Check Cost > 0
+-- PRIMARY KEY (Order_id, Product_ID)
+-- 3. belongsTo (relation b/w Product & Category)
+-- Schema: belongsTo(product_id,category_id)
+-- product_id INT
+-- NOT NULL
+-- FOREIGN KEY REFERENCES Product
+-- category_id INT
+-- NOT NULL
+-- FOREIGN KEY REFERENCES Category
+-- PRIMARY KEY (product_id,category_id)
