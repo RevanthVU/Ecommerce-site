@@ -17,7 +17,7 @@ import mysql.connector
 # mydatabase connection
 local_server=True
 app=Flask(__name__)
-app.secret_key="Ron@007333"
+app.secret_key="*******"
 
 
 # This is for getting the unique user access
