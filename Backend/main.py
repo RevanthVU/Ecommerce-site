@@ -10,7 +10,7 @@ import mysql.connector
 # mydb=mysql.connector.connect(
 #     host="localhost",
 #     username="root",
-#     password="Ron@007333"
+#     password="********"
 # )
 # mycursor=mydb.cursor()
 
